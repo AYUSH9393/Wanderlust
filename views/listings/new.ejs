@@ -4,10 +4,11 @@
   
     <br /><br />
     <h3>Create a New Listing</h3>
-    <form method="POST" action="/listings">
+    <form method="POST" action="/listings" novalidate class="needs-validation">
       <div class="mb-3">
         <label for="title" class="from-label">Title</label>
-        <input name="listing[title]" placeholder="add a catchy title" type="text" class="form-control"/>
+        <input name="listing[title]" placeholder="add a catchy title" type="text" class="form-control" required/>
+        <div class="valid-feedback">Title looks good!</div>
       </div>
       <div class="mb-3">
         <label for="description" class="from-label">Description</label>
@@ -15,7 +16,9 @@
         name="listing[description]"
         placeholder="enter description"
         class="form-control"
+        required
       ></textarea>
+      <div class="invalid-feedback">Please enter a short Description</div>
       </div>
 
       <div class="mb-3">
@@ -31,12 +34,14 @@
       <div class="row">
         <div class="mb-3 col-md-4">
           <label for="price" class="from-label">Price</label>
-          <input name="listing[price]" placeholder="1500" type="number" class="form-control" />
+          <input name="listing[price]" placeholder="1500"  class="form-control" required />
+          <div class="invalid-feedback">Price should be valid</div>
         </div>
   
         <div class="mb-3 col-md-8">
           <label for="country" class="from-label">Country</label>
-          <input name="listing[country]" placeholder="india" type="text" class="form-control" />
+          <input name="listing[country]" placeholder="india" type="text" class="form-control" required />
+          <div class="invalid-feedback">Country name should be vaild</div>
         </div>
       </div>
       
@@ -48,7 +53,9 @@
         placeholder="eg.jaipur"
         type="text"
         class="form-control"
+        required
       />
+      <div class="invalid-feedback">location should be vaild</div>
       </div>
       <button class="btn btn-dark add-btn mt-3">Add</button>
       
